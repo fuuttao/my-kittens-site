@@ -1,301 +1,152 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Для моего любимого</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
+<!DOCTYPE html> 
+<html lang="ru"> 
+ <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Для моего любимого</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background-color: #f9f9f9; 
+            margin: 0; 
+            padding: 0; 
+        } 
+        h1 { 
+            color: #ff7f7f; 
+        } 
+        p { 
+            color: #555; 
         }
-        h1 {
-            color: #ff7f7f;
+        /* Стили для второго блока */
+        .gift-message { 
+            margin-top: 30px; 
+            padding: 20px; 
+            background-color: #f8e1f4; 
+            border-radius: 10px; 
+            font-size: 22px; 
+            color: #7d4f96; 
+            position: relative; 
+            display: inline-block; 
         }
-        p {
-            color: #555;
+
+        /* Анимация для сердечек */
+        .heart { 
+            position: absolute; 
+            top: -20px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            font-size: 30px; 
+            color: red; 
+            animation: moveHeart 2s infinite; 
         }
-    </style>
-</head>
-<body>
-    <h1>Ты мой самый лучший</h1>
-    <p>Этот сайт я сделала, чтобы рассказать, как сильно я тебя люблю.
-        и поздравить с 14 февраля</p>
+
+        @keyframes moveHeart { 
+            0% { top: -20px; opacity: 1; } 
+            50% { top: 20px; opacity: 0.6; } 
+            100% { top: -20px; opacity: 1; } 
+        }
+        .hidden { 
+            display: none; 
+        }
+    </style> 
+</head> 
+<body> 
+    <h1>Ты мой самый лучший</h1> 
+    <p>Этот сайт я сделала, чтобы рассказать, как сильно я тебя люблю. 
+        и поздравить с 14 февраля</p> 
     <p>Ты — мой мир и мое счастье!</p>
-</body>
-</html>
-<img src="images/cat.gif" alt="Милый котик лежит на спине и играется с сердечком">
-<img src="images/kiss.gif" alt="воздушный поцелуй"
- html></DOCTYPE> 
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Его хорошие стороны</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background-color: #b39ddb; /* Пастельный фиолетовый */
-            padding: 20px;
-        }
-        h1 {
-            font-size: 36px;
-            margin: 0;
-            color: white;
-        }
-        .qualities {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px;
-        }
-        .quality {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .quality:hover {
-            transform: scale(1.05);
-        }
-        .quality h2 {
-            color: #8e44ad; /* Тёмный фиолетовый */
-            font-size: 24px;
-        }
-        .quality p {
-            font-size: 18px;
-            color: #555;
-        }
-        footer {
-            background-color: #b39ddb; /* Пастельный фиолетовый */
-            padding: 20px;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Его хорошие стороны и качества</h1>
-    </header>
 
-    <div class="qualities">
-        <div class="quality">
-            <h2>Ты невероятно умный</h2>
-            <p>Твои идеи и взгляды всегда вдохновляют и помогают мне.</p>
-        </div>
-        <div class="quality">
-            <h2>Заботливый, добрый, смешной</h2>
-            <p>Ты всегда рядом, чтобы поддержать, и твоя доброта — это то, что мне так важно.</p>
-        </div>
-        <div class="quality">
-            <h2>Понимающий и воспитанный</h2>
-            <p>Ты всегда умеешь меня выслушать и поддержать в трудные моменты, и твоё воспитание — это пример для меня.</p>
-        </div>
-        <div class="quality">
-            <h2>Романтичный и интересный</h2>
-            <p>Твои романтические жесты всегда заставляют меня чувствовать себя особенной, а разговоры с тобой — лучшее, что может быть.</p>
-        </div>
-        <div class="quality">
-            <h2>Мне абсолютно всё нравится в тебе</h2>
-            <p>Каждый момент с тобой — это счастье, ты идеален для меня во всём.</p>
-        </div>
-        <div class="quality">
-            <h2>Тело словно произведение искусства</h2>
-            <p>Твоё тело — это пример самого искусства.</p>
-        </div>
-        <div class="quality">
-            <h2>Ты заставляешь меня чувствовать себя в безопасности</h2>
-            <p>С тобой я чувствую себя защищённой и уверенной в себе.</p>
-        </div>
-    </div>
+    <img src="images/cat.gif" alt="Милый котик лежит на спине и играется с сердечком"> 
+    <img src="images/kiss.gif" alt="воздушный поцелуй">
 
-    <footer>
-        <p>С любовью, твоя манюня.</p>
-    </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тест для тебя</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f9;
-            text-align: center;
-            padding: 50px;
-        }
+    <h1>Его хорошие стороны и качества</h1> 
+    <div class="qualities"> 
+        <div class="quality"> 
+            <h2>Ты невероятно умный</h2> 
+            <p>Твои идеи и взгляды всегда вдохновляют и помогают мне.</p> 
+        </div> 
+        <div class="quality"> 
+            <h2>Заботливый, добрый, смешной</h2> 
+            <p>Ты всегда рядом, чтобы поддержать, и твоя доброта — это то, что мне так важно.</p> 
+        </div> 
+        <div class="quality"> 
+            <h2>Понимающий и воспитанный</h2> 
+            <p>Ты всегда умеешь меня выслушать и поддержать в трудные моменты, и твоё воспитание — это пример для меня.</p> 
+        </div> 
+        <div class="quality"> 
+            <h2>Романтичный и интересный</h2> 
+            <p>Твои романтические жесты всегда заставляют меня чувствовать себя особенной, а разговоры с тобой — лучшее, что может быть.</p> 
+        </div> 
+        <div class="quality"> 
+            <h2>Мне абсолютно всё нравится в тебе</h2> 
+            <p>Каждый момент с тобой — это счастье, ты идеален для меня во всём.</p> 
+        </div> 
+        <div class="quality"> 
+            <h2>Тело словно произведение искусства</h2> 
+            <p>Твоё тело — это пример самого искусства.</p> 
+        </div> 
+        <div class="quality"> 
+            <h2>Ты заставляешь меня чувствовать себя в безопасности</h2> 
+            <p>С тобой я чувствую себя защищённой и уверенной в себе.</p> 
+        </div> 
+    </div> 
 
-        .gift-message {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #f8e1f4;
-            border-radius: 10px;
-            font-size: 22px;
-            color: #7d4f96;
-            position: relative;
-            display: inline-block;
-        }
+    <footer> 
+        <p>С любовью, твоя манюня.</p> 
+    </footer> 
 
-        /* Добавление анимации для сердечек */
-        .heart {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 30px;
-            color: red;
-            animation: moveHeart 2s infinite;
-        }
+    <h1>Пройди тест и получи свой сюрприз!</h1> 
+    <form id="quizForm"> 
+        <div class="question"> 
+            <p>Какой мой любимый цвет?</p> 
+            <input type="text" id="question1" required> 
+        </div> 
 
-        /* Множество сердец, создаем эффект движения */
-        .heart:nth-child(1) { animation-delay: 0s; }
-        .heart:nth-child(2) { animation-delay: 0.2s; }
-        .heart:nth-child(3) { animation-delay: 0.4s; }
-        .heart:nth-child(4) { animation-delay: 0.6s; }
-        .heart:nth-child(5) { animation-delay: 0.8s; }
-        .heart:nth-child(6) { animation-delay: 1s; }
-        .heart:nth-child(7) { animation-delay: 1.2s; }
+        <div class="question"> 
+            <p>Какого числа мы пошли гулять второй раз?</p> 
+            <input type="text" id="question2" required> 
+        </div> 
 
-        /* Анимация движения сердец */
-        @keyframes moveHeart {
-            0% { top: -20px; opacity: 1; }
-            50% { top: 20px; opacity: 0.6; }
-            100% { top: -20px; opacity: 1; }
-        }
+        <div class="question"> 
+            <p>Кого я люблю больше всего на свете?</p> 
+            <input type="text" id="question3" required> 
+        </div> 
 
-        .hidden {
-            display: none;
-        }
-    </style>
-</head>
-<body>
+        <button type="button" onclick="checkAnswers()">Проверить ответы</button> 
+    </form> 
 
-    <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тест для тебя</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f9;
-            text-align: center;
-            padding: 50px;
-        }
+    <div class="gift-message hidden" id="giftMessage"> 
+        <p>Не волнуйся, этот тест не определяет твоей любви ко мне! Ты у меня самый лучший! Горжусь тобой! 💖</p> 
+    </div><!-- Сердечки -->
+    <div class="heart">❤️</div> 
+    <div class="heart">❤️</div> 
+    <div class="heart">❤️</div> 
+    <div class="heart">❤️</div> 
+    <div class="heart">❤️</div> 
+    <div class="heart">❤️</div> 
+    <div class="heart">❤️</div> 
 
-        h1 {
-            color: #5e3a73; /* Тёмно-фиолетовый цвет */
-        }
+    <script> 
+        function checkAnswers() { 
+            // Получаем ответы на вопросы 
+            const answer1 = document.getElementById("question1").value.toLowerCase(); 
+            const answer2 = document.getElementById("question2").value.toLowerCase(); 
+            const answer3 = document.getElementById("question3").value.toLowerCase(); 
 
-        .gift-message {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #f8e1f4;
-            border-radius: 10px;
-            font-size: 22px;
-            color: #7d4f96;
-            position: relative;
-            display: inline-block;
-        }
+            // Определяем правильные ответы 
+            const correctAnswer1 = "фиолетовый";  
+            const correctAnswer2 = "26 августа 2023";  
+            const correctAnswer3 = "руслан";  
 
-        .heart {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 30px;
-            color: red;
-            animation: moveHeart 2s infinite;
-        }
+            // Проверяем, правильные ли ответы 
+            if (answer1 === correctAnswer1 && answer2 === correctAnswer2 && answer3 === correctAnswer3) { 
+                document.getElementById("giftMessage").classList.remove("hidden"); 
+            } else { 
+                alert("Ты не совсем правильно ответил, попробуй еще раз!"); 
+            } 
+        } 
+    </script> 
 
-        .heart:nth-child(1) { animation-delay: 0s; }
-        .heart:nth-child(2) { animation-delay: 0.2s; }
-        .heart:nth-child(3) { animation-delay: 0.4s; }
-        .heart:nth-child(4) { animation-delay: 0.6s; }
-        .heart:nth-child(5) { animation-delay: 0.8s; }
-        .heart:nth-child(6) { animation-delay: 1s; }
-        .heart:nth-child(7) { animation-delay: 1.2s; }
-
-        @keyframes moveHeart {
-            0% { top: -20px; opacity: 1; }
-            50% { top: 20px; opacity: 0.6; }
-            100% { top: -20px; opacity: 1; }
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Пройди тест и получи свой сюрприз!</h1>
-    <form id="quizForm">
-        <div class="question">
-            <p>Какой мой любимый цвет?</p>
-            <input type="text" id="question1" required>
-        </div>
-
-        <div class="question">
-            <p>Какого числа мы пошли гулять второй раз?</p>
-            <input type="text" id="question2" required>
-        </div>
-
-        <div class="question">
-            <p>Кого я люблю больше всего на свете?</p>
-            <input type="text" id="question3" required>
-        </div>
-
-        <button type="button" onclick="checkAnswers()">Проверить ответы</button>
-    </form>
-
-    <div class="gift-message hidden" id="giftMessage">
-        <p>Не волнуйся, этот тест не определяет твоей любви ко мне! Ты у меня самый лучший! Горжусь тобой! 💖</p>
-    </div>
-
-    <!-- Сердечки -->
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-    <div class="heart">❤️</div>
-
-    <script>
-        function checkAnswers() {
-            // Получаем ответы на вопросы
-            const answer1 = document.getElementById("question1").value.toLowerCase();
-            const answer2 = document.getElementById("question2").value.toLowerCase();
-            const answer3 = document.getElementById("question3").value.toLowerCase();
-
-            // Определяем правильные ответы
-            const correctAnswer1 = "фиолетовый";  // Любимый цвет
-            const correctAnswer2 = "26 августа 2023";  // Дата прогулки
-            const correctAnswer3 = "руслан";  // Кого ты любишь
-
-            // Проверяем, правильные ли ответы
-            if (answer1 === correctAnswer1 && answer2 === correctAnswer2 && answer3 === correctAnswer3) {
-                // Если все ответы правильные, показываем подарок
-                document.getElementById("giftMessage").classList.remove("hidden");
-            } else {
-                alert("Ты не совсем правильно ответил, попробуй еще раз!");
-            }
-        }
-    </script>
-
-</body>
+</body> 
 </html>
