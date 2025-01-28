@@ -95,58 +95,143 @@
     <footer> 
         <p>С любовью, твоя манюня.</p> 
     </footer> 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подарок</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #2c2c54;
+            font-family: Arial, sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
 
-    <h1>Пройди тест и получи свой сюрприз!</h1> 
-    <form id="quizForm"> 
-        <div class="question"> 
-            <p>Какой мой любимый цвет?</p> 
-            <input type="text" id="question1" required> 
-        </div> 
+        /* Анимация для сердечек */
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #d1a7f3;
+            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 25% 100%, 0% 35%);
+            opacity: 0;
+            animation: float 6s ease-in-out infinite, fadeInOut 6s ease-in-out infinite;
+        }
 
-        <div class="question"> 
-            <p>Какого числа мы пошли гулять второй раз?</p> 
-            <input type="text" id="question2" required> 
-        </div> 
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
 
-        <div class="question"> 
-            <p>Кого я люблю больше всего на свете?</p> 
-            <input type="text" id="question3" required> 
-        </div> 
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            75% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
 
-        <button type="button" onclick="checkAnswers()">Проверить ответы</button> 
-    </form> 
+        /* Стиль для текста */
+        h1 {
+            color: #fff;
+            text-align: center;
+        }
 
-    <div class="gift-message hidden" id="giftMessage"> 
-        <p>Не волнуйся, этот тест не определяет твоей любви ко мне! Ты у меня самый лучший! Горжусь тобой! 💖</p> 
-    </div><!-- Сердечки -->
-    <div class="heart">❤️</div> 
-    <div class="heart">❤️</div> 
-    <div class="heart">❤️</div> 
-    <div class="heart">❤️</div> 
-    <div class="heart">❤️</div> 
-    <div class="heart">❤️</div> 
-    <div class="heart">❤️</div> 
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #8a6bf1;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        
+        button:hover {
+            background-color: #7a5bc3;
+        }
 
-    <script> 
-        function checkAnswers() { 
-            // Получаем ответы на вопросы 
-            const answer1 = document.getElementById("question1").value.toLowerCase(); 
-            const answer2 = document.getElementById("question2").value.toLowerCase(); 
-            const answer3 = document.getElementById("question3").value.toLowerCase(); 
+        #giftMessage {
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ответь на вопросы!</h1>
+    <form>
+        <label for="question1">Какой твой любимый цвет?</label>
+        <input type="text" id="question1" />
+        <br>
+        <label for="question2">Когда мы встретились?</label>
+        <input type="text" id="question2" />
+        <br>
+        <label for="question3">Как тебя зовут?</label>
+        <input type="text" id="question3" />
+        <br><br>
+        <button type="button" onclick="checkAnswers()">Проверить ответы</button>
+    </form>
 
-            // Определяем правильные ответы 
-            const correctAnswer1 = "фиолетовый";  
-            const correctAnswer2 = "26 августа 2023";  
-            const correctAnswer3 = "руслан";  
+    <div id="giftMessage" class="hidden">
+        <h2>Поздравляю! Ты угадал все ответы!</h2>
+        <p>Я приготовила для тебя сюрприз!</p>
+    </div>
 
-            // Проверяем, правильные ли ответы 
-            if (answer1 === correctAnswer1 && answer2 === correctAnswer2 && answer3 === correctAnswer3) { 
-                document.getElementById("giftMessage").classList.remove("hidden"); 
-            } else { 
-                alert("Ты не совсем правильно ответил, попробуй еще раз!"); 
-            } 
-        } 
-    </script> 
+    <!-- Сердечки -->
+    <div class="heart" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
+    <div class="heart" style="top: 20%; left: 30%; animation-delay: 1s;"></div>
+    <div class="heart" style="top: 30%; left: 50%; animation-delay: 2s;"></div>
+    <div class="heart" style="top: 40%; left: 70%; animation-delay: 3s;"></div>
+    <div class="heart" style="top: 50%; left: 10%; animation-delay: 4s;"></div>
+    <div class="heart" style="top: 60%; left: 30%; animation-delay: 5s;"></div>
+    <div class="heart" style="top: 70%; left: 50%; animation-delay: 6s;"></div>
+    <div class="heart" style="top: 80%; left: 70%; animation-delay: 7s;"></div>
 
-</body> 
+    <script>
+        function checkAnswers() {
+            // Получаем ответы на вопросы
+            const answer1 = document.getElementById("question1").value.toLowerCase();
+            const answer2 = document.getElementById("question2").value.toLowerCase();
+            const answer3 = document.getElementById("question3").value.toLowerCase();
+
+            // Определяем правильные ответы
+            const correctAnswer1 = "фиолетовый";
+            const correctAnswer2 = "26 августа 2023";
+            const correctAnswer3 = "руслан";
+
+            // Проверяем, правильные ли ответы
+            if (answer1 === correctAnswer1 && answer2 === correctAnswer2 && answer3 === correctAnswer3) {
+                document.getElementById("giftMessage").classList.remove("hidden"); // Показываем сообщение с подарком
+            } else {
+                alert("Ты не совсем правильно ответил, попробуй еще раз!"); // Сообщение об ошибке
+            }
+        }
+    </script>
+</body>
 </html>
+    
