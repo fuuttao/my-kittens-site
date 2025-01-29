@@ -1,11 +1,10 @@
+// Функция для анимации табличек при нажатии
+function animateQuality(element) {
+    // Добавляем класс с анимацией
+    element.classList.add('animate');
 
-// Пример JavaScript, чтобы показывать сообщение при нажатии на кнопку
-document.addEventListener('DOMContentLoaded', function () {
-    const messageButton = document.createElement('button');
-    messageButton.textContent = 'Нажми на меня!';
-    document.body.appendChild(messageButton);
-
-    messageButton.addEventListener('click', function () {
-        alert('С любовью, твоя манюня!');
-    });
-});
+    // Убираем анимацию через 0.5 секунд (длительность анимации)
+    setTimeout(() => {
+        element.classList.remove('animate');
+    }, 500);
+}
