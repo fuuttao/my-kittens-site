@@ -197,3 +197,109 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Романтичный сайт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .side-question {
+            position: fixed;
+            top: 30%;
+            width: 50px;
+            height: 50px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-side {
+            left: 10px;
+        }
+
+        .right-side {
+            right: 10px;
+        }
+
+        .heart {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            color: #e74c3c;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .show-heart {
+            opacity: 1;
+        }
+
+        .question-popup {
+            position: absolute;
+            top: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #8e44ad;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            z-index: 10;
+        }
+
+        .show-popup {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Левый вопрос -->
+    <div class="side-question left-side" onclick="showAnswer('left')">
+        ?
+        <div id="popup-left" class="question-popup">Ты помнишь, когда первый раз лёг на мои ноги?</div>
+        <div id="heart-left" class="heart">❤️</div>
+    </div>
+
+    <!-- Правый вопрос -->
+    <div class="side-question right-side" onclick="showAnswer('right')">
+        ?
+        <div id="popup-right" class="question-popup">Как ты думаешь, что нас ждёт впереди?</div>
+        <div id="heart-right" class="heart">❤️</div>
+    </div>
+
+    <script>
+        function showAnswer(side) {
+            // Показываем popup с вопросом
+            document.getElementById('popup-' + side).classList.add('show-popup');
+
+            // Показываем сердечко
+            setTimeout(function() {
+                document.getElementById('heart-' + side).classList.add('show-heart');
+            }, 500);
+
+            // Скрыть popup через 2 секунды
+            setTimeout(function() {
+                document.getElementById('popup-' + side).classList.remove('show-popup');
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
