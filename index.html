@@ -30,34 +30,23 @@
             display: inline-block; 
         }
 
-        /* Анимация для сердечек */
-        .heart { 
-            position: absolute; 
-            top: -20px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            font-size: 30px; 
-            color: red; 
-            animation: moveHeart 2s infinite; 
-        }
-
-        moveHeart { 
-            0% { top: -20px; opacity: 1; } 
-            50% { top: 20px; opacity: 0.6; } 
-            100% { top: -20px; opacity: 1; } 
-        }
-        .hidden { 
-            display: none; 
-        }
-    </style> 
-</head> 
+        <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 февраля</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
     <h1>Ты мой самый лучший</h1>
-    <p>Этот сайт я сделала, чтобы рассказать, как сильно я тебя люблю. и поздравить с 14 февраля</p>
+    <p>Этот сайт я сделала, чтобы рассказать, как сильно я тебя люблю и поздравить с 14 февраля.</p>
     <p>Ты — мой мир и мое счастье!</p>
 
-    <img src="images/cat.gif" alt="Милый котик лежит на спине и играется с сердечком">
-    <img src="images/kiss.gif" alt="воздушный поцелуй">
+    <!-- Сердечки -->
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
 
     <h1>Его хорошие стороны и качества</h1>
     <div class="qualities">
@@ -94,112 +83,134 @@
     <footer>
         <p>С любовью, твоя манюня.</p>
     </footer>
+
+    <script>
+        // Динамическое добавление сердечек с случайными позициями
+        function createHearts() {
+            for (let i = 0; i < 10; i++) {
+                let heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * 100 + 'vw'; // Случайное положение по горизонтали
+                heart.style.animationDelay = Math.random() * 6 + 's'; // Случайная задержка анимации
+                document.body.appendChild(heart);
+            }
+        }
+
+        createHearts();
+    </script>
 </body>
-/* Основные стили для качеств */
+</html>
+     /* Основные стили */
+body {
+    position: relative; /* Для правильного позиционирования абсолютных элементов */
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+    overflow: hidden; /* Чтобы сердечки не вылезали за пределы */
+}
+
+h1 {
+    color: #ff6f61;
+    text-align: center;
+}
+
 .qualities {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Автоматическая сетка для разных экранов */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin: 20px 0;
 }
 
 .quality {
-    background-color: #f8f0f0;  /* Светлый фон для карточек */
-    border: 2px solid #ff6f61;  /* Розовая рамка */
-    border-radius: 15px; /* Скругленные углы */
+    background-color: #f8f0f0;
+    border: 2px solid #ff6f61;
+    border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .quality h2 {
-    color: #ff6f61;  /* Розовый цвет текста заголовка */
+    color: #ff6f61;
     font-size: 24px;
     margin-bottom: 15px;
     text-align: center;
 }
 
 .quality p {
-    color: #555;  /* Тёмно-серый цвет текста */
+    color: #555;
     font-size: 18px;
     line-height: 1.5;
     text-align: center;
 }
 
-/* Эффект при наведении на карточку */
 .quality:hover {
-    transform: scale(1.05); /* Немного увеличиваем карточку при наведении */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличиваем тень */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-        /* Анимация для сердечек */
-        .heart {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: #d1a7f3;
-            clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 25% 100%, 0% 35%);
-            opacity: 0;
-            animation: float 6s ease-in-out infinite, fadeInOut 6s ease-in-out infinite;
-        }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-100px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
+/* Анимация для сердечек */
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #d1a7f3;
+    clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 25% 100%, 0% 35%);
+    opacity: 0;
+    animation: float 6s ease-in-out infinite, fadeInOut 6s ease-in-out infinite;
+}
 
-        @keyframes fadeInOut {
-            0% {
-                opacity: 0;
-            }
-            25% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
-            75% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
-        /* Стиль для текста */
-        h1 {
-            color: #fff;
-            text-align: center;
-        }
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #8a6bf1;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2em;
-        }
-        
-        button:hover {
-            background-color: #7a5bc3;
-        }
+/* Стиль для кнопки */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #8a6bf1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
 
-        #giftMessage {
-            text-align: center;
-            color: white;
-            font-size: 1.5em;
-        }
-    </style>
-</head>
+button:hover {
+    background-color: #7a5bc3;
+}
+
+#giftMessage {
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
 <body>
     <h1>Ответь на вопросы!</h1>
     <form>
