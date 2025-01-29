@@ -316,7 +316,8 @@
             padding: 0;
             background-color: #f2f2f2;
             position: relative;
-            overflow: hidden;
+            overflow: auto; /* Это позволяет прокручивать страницу */
+            height: 100vh; /* Устанавливаем высоту на полный экран */
         }
 
         .heart {
@@ -325,6 +326,7 @@
             color: #e74c3c;
             opacity: 0;
             animation: floatHearts 10s infinite;
+            pointer-events: none; /* Сердечки не будут мешать взаимодействию с другими элементами */
         }
 
         @keyframes floatHearts {
@@ -382,6 +384,8 @@
     <div class="heart" style="top: 50%; left: 60%;">❤️</div>
     <div class="heart" style="top: 70%; left: 80%;">❤️</div>
     <div class="heart" style="top: 20%; left: 70%;">❤️</div>
+
+    <!-- Здесь может быть основной контент страницы -->
 
 </body>
 </html>
