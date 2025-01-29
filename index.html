@@ -1,318 +1,38 @@
-<!DOCTYPE html> 
-<html lang="ru"> 
- <head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Для моего любимого</title> 
-    <style> 
-        body { 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-            background-color: #f9f9f9; 
-            margin: 0; 
-            padding: 0; 
-        } 
-        h1 { 
-            color: #ff7f7f; 
-        } 
-        p { 
-            color: #555; 
-        }
-        /* Стили для второго блока */
-        .gift-message { 
-            margin-top: 30px; 
-            padding: 20px; 
-            background-color: #f8e1f4; 
-            border-radius: 10px; 
-            font-size: 22px; 
-            color: #7d4f96; 
-            position: relative; 
-            display: inline-block; 
-        }
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>14 февраля</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Подключаем CSS файл -->
 </head>
 <body>
-    <h1>Ты мой самый лучший</h1>
-    <p>Этот сайт я сделала, чтобы рассказать, как сильно я тебя люблю и поздравить с 14 февраля.</p>
-    <p>Ты — мой мир и мое счастье!</p>
+    <header>
+        <h1>Ты мой самый лучший</h1>
+        <p>Этот сайт я сделала, чтобы поздравить тебя с 14 февраля.</p>
+    </header>
 
-    <!-- Сердечки -->
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
-
-    <h1>Его хорошие стороны и качества</h1>
-    <div class="qualities">
+    <section class="qualities">
+        <h2>Твои лучшие качества</h2>
         <div class="quality">
-            <h2>Ты невероятно умный</h2>
-            <p>Твои идеи и взгляды всегда вдохновляют и помогают мне.</p>
+            <h3>Ты невероятно умный</h3>
+            <p>Твои идеи всегда вдохновляют меня!</p>
         </div>
         <div class="quality">
-            <h2>Заботливый, добрый, смешной</h2>
-            <p>Ты всегда рядом, чтобы поддержать, и твоя доброта — это то, что мне так важно.</p>
+            <h3>Ты заботливый и добрый</h3>
+            <p>Ты всегда поддерживаешь меня в трудные моменты.</p>
         </div>
         <div class="quality">
-            <h2>Понимающий и воспитанный</h2>
-            <p>Ты всегда умеешь меня выслушать и поддержать в трудные моменты, и твоё воспитание — это пример для меня.</p>
+            <h3>Ты романтичный и интересный</h3>
+            <p>Ты умеешь делать каждый день особенным.</p>
         </div>
-        <div class="quality">
-            <h2>Романтичный и интересный</h2>
-            <p>Твои романтические жесты всегда заставляют меня чувствовать себя особенной, а разговоры с тобой — лучшее, что может быть.</p>
-        </div>
-        <div class="quality">
-            <h2>Мне абсолютно всё нравится в тебе</h2>
-            <p>Каждый момент с тобой — это счастье, ты идеален для меня во всём.</p>
-        </div>
-        <div class="quality">
-            <h2>Тело словно произведение искусства</h2>
-            <p>Твоё тело — это пример самого искусства.</p>
-        </div>
-        <div class="quality">
-            <h2>Ты заставляешь меня чувствовать себя в безопасности</h2>
-            <p>С тобой я чувствую себя защищённой и уверенной в себе.</p>
-        </div>
-    </div>
+    </section>
 
     <footer>
         <p>С любовью, твоя манюня.</p>
     </footer>
 
-    <script>
-        // Динамическое добавление сердечек с случайными позициями
-        function createHearts() {
-            for (let i = 0; i < 10; i++) {
-                let heart = document.createElement('div');
-                heart.classList.add('heart');
-                heart.style.left = Math.random() * 100 + 'vw'; // Случайное положение по горизонтали
-                heart.style.animationDelay = Math.random() * 6 + 's'; // Случайная задержка анимации
-                document.body.appendChild(heart);
-            }
-        }
-
-        createHearts();
-    </script>
+    <script src="script.js"></script> <!-- Подключаем JS файл -->
 </body>
 </html>
-     /* Основные стили */
-body {
-    position: relative; /* Для правильного позиционирования абсолютных элементов */
-    background-color: #f4f4f9;
-    font-family: Arial, sans-serif;
-    color: #333;
-    overflow: hidden; /* Чтобы сердечки не вылезали за пределы */
-}
-
-h1 {
-    color: #ff6f61;
-    text-align: center;
-}
-
-.qualities {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.quality {
-    background-color: #f8f0f0;
-    border: 2px solid #ff6f61;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.quality h2 {
-    color: #ff6f61;
-    font-size: 24px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.quality p {
-    color: #555;
-    font-size: 18px;
-    line-height: 1.5;
-    text-align: center;
-}
-
-.quality:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Анимация для сердечек */
-.heart {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: #d1a7f3;
-    clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 25% 100%, 0% 35%);
-    opacity: 0;
-    animation: float 6s ease-in-out infinite, fadeInOut 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-100px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInOut {
-    0% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    75% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-/* Стиль для кнопки */
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #8a6bf1;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
-}
-
-button:hover {
-    background-color: #7a5bc3;
-}
-
-#giftMessage {
-    text-align: center;
-    color: white;
-    font-size: 1.5em;
-}
-<body>
-    <h1>Ответь на вопросы!</h1>
-    <form>
-        <label for="question1">Какой твой любимый цвет?</label>
-        <input type="text" id="question1" />
-        <br>
-        <label for="question2">Когда мы встретились?</label>
-        <input type="text" id="question2" />
-        <br>
-        <label for="question3">Как тебя зовут?</label>
-        <input type="text" id="question3" />
-        <br><br>
-        <button type="button" onclick="checkAnswers()">Проверить ответы</button>
-    </form>
-
-    <div id="giftMessage" class="hidden">
-        <h2>Поздравляю! Ты угадал все ответы!</h2>
-        <p>Я приготовила для тебя сюрприз!</p>
-    </div>
-
-    <!-- Сердечки -->
-    <div class="heart" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
-    <div class="heart" style="top: 20%; left: 30%; animation-delay: 1s;"></div>
-    <div class="heart" style="top: 30%; left: 50%; animation-delay: 2s;"></div>
-    <div class="heart" style="top: 40%; left: 70%; animation-delay: 3s;"></div>
-    <div class="heart" style="top: 50%; left: 10%; animation-delay: 4s;"></div>
-    <div class="heart" style="top: 60%; left: 30%; animation-delay: 5s;"></div>
-    <div class="heart" style="top: 70%; left: 50%; animation-delay: 6s;"></div>
-    <div class="heart" style="top: 80%; left: 70%; animation-delay: 7s;"></div>
-
-    <script>
-      function checkAnswers() {
-    // Получаем поля ввода
-    const question1 = document.getElementById("question1");
-    const question2 = document.getElementById("question2");
-    const question3 = document.getElementById("question3");
-
-    // Получаем ответы и обрабатываем их
-    const answer1 = question1.value.trim().toLowerCase();
-    const answer2 = question2.value.trim().toLowerCase();
-    const answer3 = question3.value.trim().toLowerCase();
-
-    // Правильные ответы
-    const correctAnswer1 = "фиолетовый";
-    const correctAnswer2 = ["26 августа 2023", "26.08.2023"]; // Допустимые варианты
-    const correctAnswer3 = "руслан";
-
-    // Функция для подсветки
-    function highlightInput(input, isCorrect) {
-        input.style.borderColor = isCorrect ? "green" : "red"; // Зелёный для правильного, красный для неправильного
-    }
-
-    // Проверяем ответы и подсвечиваем
-    const isAnswer1Correct = answer1 === correctAnswer1;
-    const isAnswer2Correct = correctAnswer2.includes(answer2);
-    const isAnswer3Correct = answer3 === correctAnswer3;
-
-    highlightInput(question1, isAnswer1Correct);
-    highlightInput(question2, isAnswer2Correct);
-    highlightInput(question3, isAnswer3Correct);
-
-    // Если все ответы правильные
-    if (isAnswer1Correct && isAnswer2Correct && isAnswer3Correct) {
-        document.getElementById("giftMessage").classList.remove("hidden"); // Показываем сообщение с подарком
-    } else {
-        alert("Ты не совсем правильно ответил, попробуй еще раз!");
-    }
-}
-    <div class="reminder" id="reminder1">
-    <p>Любимый, я всегда тебе помогу и поддержу любой твой выбор!</p>
-</div>
-
-<div class="reminder" id="reminder2">
-    <p>Каждый праздник и каждый день, проведённый с тобой, дорог для меня!</p>
-</div>
-     .reminder {
-    background-color: #ffe6e6;  /* Нежно-розовый фон */
-    border: 2px solid #f5a8b5;  /* Мягкий розовый цвет для рамки */
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    font-size: 18px;
-    font-family: 'Arial', sans-serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: popIn 0.6s ease-out;
-}
-
-.reminder p {
-    margin: 0;
-    color: #f5a8b5;  /* Более мягкий красный/розовый цвет текста */
-    text-align: center;
-    font-weight: bold;
-}
-
-@keyframes popIn {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
      
