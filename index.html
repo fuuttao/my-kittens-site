@@ -58,6 +58,21 @@
             color: white;
         }
     </style>
+    button {
+        background-color: #ff99cc;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #ff6f91;
+    }
+</style>
 </head>
 <body>
     <header>
@@ -99,5 +114,20 @@
         <p>Ты — самое большое счастье в моей жизни. С любовью, Нигора.</p>
     </footer>
     <div class="hearts"></div>
+    <div class="qualities">
+        <!-- Контент сайта -->
+    </div>
+
+    <!-- Кнопка и сообщение -->
+    <button id="hugButton">Обнять</button>
+    <p id="hugMessage" style="display: none;">Ты обнял меня! Спасибо за тепло :)</p>
+
+    <script>
+        const hugButton = document.getElementById('hugButton');
+        const hugMessage = document.getElementById('hugMessage');
+        hugButton.addEventListener('click', () => {
+            hugMessage.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
