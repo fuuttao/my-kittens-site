@@ -408,22 +408,43 @@
             height: 100vh;
             flex-direction: column;
             text-align: center;
+            overflow-y: auto; /* Добавляем прокрутку */
         }
 
         .question {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 20px;
+            margin-bottom: 15px;
             font-weight: bold;
         }
 
         .answer {
-            font-size: 18px;
-            margin-bottom: 15px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 70%;
+            max-width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #c0392b;
         }
 
         .result {
             display: none;
-            font-size: 24px;
+            font-size: 22px;
             color: #e74c3c;
             margin-top: 30px;
         }
@@ -435,13 +456,13 @@
         }
 
         .gift-wrapper img {
-            max-width: 80%;
+            max-width: 60%;
             height: auto;
             border-radius: 10px;
         }
 
         .gift-wrapper p {
-            font-size: 20px;
+            font-size: 18px;
             color: #e74c3c;
             margin-top: 15px;
         }
