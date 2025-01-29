@@ -213,25 +213,77 @@
     <div class="heart" style="top: 80%; left: 70%; animation-delay: 7s;"></div>
 
     <script>
-        function checkAnswers() {
-            // Получаем ответы на вопросы
-            const answer1 = document.getElementById("question1").value.toLowerCase();
-            const answer2 = document.getElementById("question2").value.toLowerCase();
-            const answer3 = document.getElementById("question3").value.toLowerCase();
+      function checkAnswers() {
+    // Получаем поля ввода
+    const question1 = document.getElementById("question1");
+    const question2 = document.getElementById("question2");
+    const question3 = document.getElementById("question3");
 
-            // Определяем правильные ответы
-            const correctAnswer1 = "фиолетовый";
-            const correctAnswer2 = "26 августа 2023";
-            const correctAnswer3 = "руслан";
+    // Получаем ответы и обрабатываем их
+    const answer1 = question1.value.trim().toLowerCase();
+    const answer2 = question2.value.trim().toLowerCase();
+    const answer3 = question3.value.trim().toLowerCase();
 
-            // Проверяем, правильные ли ответы
-            if (answer1 === correctAnswer1 && answer2 === correctAnswer2 && answer3 === correctAnswer3) {
-                document.getElementById("giftMessage").classList.remove("hidden"); // Показываем сообщение с подарком
-            } else {
-                alert("Ты не совсем правильно ответил, попробуй еще раз!"); // Сообщение об ошибке
-            }
-        }
-    </script>
-</body>
-</html>
-    
+    // Правильные ответы
+    const correctAnswer1 = "фиолетовый";
+    const correctAnswer2 = ["26 августа 2023", "26.08.2023"]; // Допустимые варианты
+    const correctAnswer3 = "руслан";
+
+    // Функция для подсветки
+    function highlightInput(input, isCorrect) {
+        input.style.borderColor = isCorrect ? "green" : "red"; // Зелёный для правильного, красный для неправильного
+    }
+
+    // Проверяем ответы и подсвечиваем
+    const isAnswer1Correct = answer1 === correctAnswer1;
+    const isAnswer2Correct = correctAnswer2.includes(answer2);
+    const isAnswer3Correct = answer3 === correctAnswer3;
+
+    highlightInput(question1, isAnswer1Correct);
+    highlightInput(question2, isAnswer2Correct);
+    highlightInput(question3, isAnswer3Correct);
+
+    // Если все ответы правильные
+    if (isAnswer1Correct && isAnswer2Correct && isAnswer3Correct) {
+        document.getElementById("giftMessage").classList.remove("hidden"); // Показываем сообщение с подарком
+    } else {
+        alert("Ты не совсем правильно ответил, попробуй еще раз!");
+    }
+}
+    <div class="reminder" id="reminder1">
+    <p>Любимый, я всегда тебе помогу и поддержу любой твой выбор!</p>
+</div>
+
+<div class="reminder" id="reminder2">
+    <p>Каждый праздник и каждый день, проведённый с тобой, дорог для меня!</p>
+</div>
+     .reminder {
+    background-color: #ffe6e6;  /* Нежно-розовый фон */
+    border: 2px solid #f5a8b5;  /* Мягкий розовый цвет для рамки */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: popIn 0.6s ease-out;
+}
+
+.reminder p {
+    margin: 0;
+    color: #f5a8b5;  /* Более мягкий красный/розовый цвет текста */
+    text-align: center;
+    font-weight: bold;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+     
