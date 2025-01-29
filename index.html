@@ -45,3 +45,65 @@
 </html>
      <link rel="stylesheet" href="css/styles.css">
 <script src="js/script.js"></script>
+/* Стили для страницы */
+body {
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    text-align: center;
+    color: #8a6bf1; /* Нежно фиолетовый */
+}
+
+/* Стиль для раздела качеств */
+.qualities {
+    margin: 20px;
+    text-align: center;
+}
+
+/* Стиль для каждой таблички */
+.quality {
+    background-color: #f1e0ff; /* Нежно фиолетовый */
+    border: 2px solid #d1a7f3;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Эффект при наведении */
+.quality:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #8a6bf1;
+    color: white;
+}
+
+/* Анимация для перемещения таблички */
+@keyframes moveTab {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
