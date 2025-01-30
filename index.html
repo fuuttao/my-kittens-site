@@ -432,8 +432,22 @@
     <footer>
         <p>С любовью, твоя манюня.</p>
     </footer>
+</script>
+    function checkAnswers() {
+    const answer1 = document.getElementById("question1").value.toLowerCase();
+    const answer2 = document.getElementById("question2").value.toLowerCase();
+    const answer3 = document.getElementById("question3").value.toLowerCase();
 
-    <script src="script.js"></script> <!-- Подключение скрипта -->
+    // Проверка (неважно, правильный ли ответ)
+    if (answer1 && answer2 && answer3) {
+        const giftMessage = document.getElementById("giftMessage");
+        giftMessage.classList.remove("hidden"); // Показать сообщение с подарком
+        alert("Этот тест не определяет твоей любви ко мне! Я тебя очень сильно люблю и горжусь тобой! Ты у меня самый лучший!!!");
+    } else {
+        alert("Ты не ответил на все вопросы. Пожалуйста, ответь на все вопросы!");
+    }
+        }
+    </script>   
 <head>
 <style>
 /* Стили для страницы */
@@ -512,20 +526,4 @@ button:hover {
 .hidden {
     display: none;
 }
-function checkAnswers() {
-    // Получаем ответы
-    const answer1 = document.getElementById("question1").value.toLowerCase();
-    const answer2 = document.getElementById("question2").value.toLowerCase();
-    const answer3 = document.getElementById("question3").value.toLowerCase();
-
-    // В любом случае показываем подарок
-    const giftMessage = document.getElementById("giftMessage");
-    giftMessage.classList.remove("hidden");
-
-    // Если хочешь, можешь вывести сообщение для правильных или неправильных ответов
-    if (answer1 === "фиолетовый" && answer2 === "26 августа 2023" && answer3 === "руслан") {
-        alert("Ты ответил на все вопросы правильно, умничка!");
-    } else {
-        alert("Неважно, правильно ты ответил или нет, я всё равно тебя люблю!");
-    }
-}
+    
