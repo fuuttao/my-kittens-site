@@ -390,3 +390,141 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест для любимого</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключение стилей -->
+</head>
+<body>
+    <header>
+        <h1>Мой милый тест</h1>
+        <p>Ответь на мои вопросы!</p>
+    </header>
+
+    <main>
+        <div class="test">
+            <div class="question">
+                <label for="question1">1) Какой мой любимый цвет?</label>
+                <input type="text" id="question1" placeholder="Например, красный">
+            </div>
+            <div class="question">
+                <label for="question2">2) Какого числа мы второй раз пошли гулять?</label>
+                <input type="text" id="question2" placeholder="Например, 1 января 2023">
+            </div>
+            <div class="question">
+                <label for="question3">3) Кого я люблю больше всего на свете?</label>
+                <input type="text" id="question3" placeholder="Например, ???">
+            </div>
+            <button onclick="checkAnswers()">Проверить ответы</button>
+        </div>
+
+        <div id="giftMessage" class="hidden">
+            <p>Этот тест не определяет твоей любви ко мне!</p>
+            <p>Я тебя очень сильно люблю и горжусь тобой!</p>
+            <p>Ты у меня самый лучший!!!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>С любовью, твоя манюня.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Подключение скрипта -->
+</body>
+</html>
+/* Стили для страницы */
+body {
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Заголовки */
+h1 {
+    color: #8a6bf1; /* Нежно фиолетовый */
+}
+
+p {
+    color: #555;
+}
+
+/* Стиль для вопросов */
+.test {
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #8a6bf1;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #d1a7f3;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #8a6bf1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #7a5bc3;
+}
+
+/* Стиль для подарка */
+#giftMessage {
+    background-color: #f1e0ff;
+    border: 2px solid #d1a7f3;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+function checkAnswers() {
+    // Получаем ответы
+    const answer1 = document.getElementById("question1").value.toLowerCase();
+    const answer2 = document.getElementById("question2").value.toLowerCase();
+    const answer3 = document.getElementById("question3").value.toLowerCase();
+
+    // В любом случае показываем подарок
+    const giftMessage = document.getElementById("giftMessage");
+    giftMessage.classList.remove("hidden");
+
+    // Если хочешь, можешь вывести сообщение для правильных или неправильных ответов
+    if (answer1 === "фиолетовый" && answer2 === "26 августа 2023" && answer3 === "руслан") {
+        alert("Ты ответил на все вопросы правильно, умничка!");
+    } else {
+        alert("Неважно, правильно ты ответил или нет, я всё равно тебя люблю!");
+    }
+}
